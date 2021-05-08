@@ -1,4 +1,5 @@
 # HighSteaks
 # mjspra reporting in
 # theunnaturallog here! :)
-# nhelz joined the fight
+# Collin reporting in! :D
+# nhelz is also here!
