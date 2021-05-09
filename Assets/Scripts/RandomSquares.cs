@@ -6,6 +6,7 @@ public class RandomSquares : MonoBehaviour
 {
     private GameObject[] circles = new GameObject[10];
     public float timer, interval = 2f;
+    public Sprite circleSprite;
 
     void Start()
     {
@@ -16,7 +17,12 @@ public class RandomSquares : MonoBehaviour
             int randomX = Random.Range(-3, 3);
             int randomY = Random.Range(-3, 3);
             int randomScale = Random.Range(1, 6);
-            circles[i] = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //circles[i] = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            //In order to implement a sprite for this, I created a sprite object instead.
+            circles[i] = new GameObject("New Sprite");
+            SpriteRenderer newSpriteRender = circles[i].AddComponent<SpriteRenderer>();
+            newSpriteRender.sprite = circleSprite;
+            newSpriteRender.sortingOrder = 20; //Instead of moving the z position, we can set the sprite to display over the pan and pancake.
             circles[i].transform.position = new Vector3(randomX, randomY, 0);
             circles[i].transform.localScale += new Vector3(randomScale*0.01f, randomScale * 0.01f, 0);
             circles[i].name = "Circle_" + i;
