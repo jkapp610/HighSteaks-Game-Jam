@@ -9,6 +9,7 @@ public class DialTurning : MonoBehaviour
     private float rotZ;
     public GameObject dial;
     public float speed;
+    public float decayDivisor;
     private bool clockwise;
     Vector3 cursorPosition;
     Vector3 rotationvector;
@@ -19,7 +20,7 @@ public class DialTurning : MonoBehaviour
     void Start()
     {
      //clockwise = true;
-        
+        decayDivisor = 4;
     }
 
     // Update is called once per frame
@@ -58,7 +59,11 @@ public class DialTurning : MonoBehaviour
 
         }
 
-
+        if(Zval < 0) {
+            rotZ += Time.deltaTime * speed / decayDivisor;
+            dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
+            flame.SetFlameViaZVal(Zval);
+        }
 
     
         //cursorPosition = Input.mousePosition;

@@ -2436,6 +2436,7 @@ MonoBehaviour:
   flame: {fileID: 97479108}
   dial: {fileID: 1495763986}
   speed: 100
+  decayDivisor: 4
   Zval: 0
 --- !u!1 &1539462693
 GameObject:
