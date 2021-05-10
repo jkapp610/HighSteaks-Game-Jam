@@ -17,7 +17,7 @@ public class DialTurning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     clockwise = true;
+     //clockwise = true;
         
     }
 
@@ -27,39 +27,30 @@ public class DialTurning : MonoBehaviour
 
         Zval = dial.transform.rotation.z;
 
-    if(Zval <= -0.9996122){
+        if(Zval <= -0.9996122||Input.GetKeyUp("d")||Input.GetKeyDown("a")){
             clockwise = false;
+         
         }
-    if(Zval>=0){
-        clockwise = true;
-    }
+    
+        if(Zval>=0||Input.GetKeyUp("a")||Input.GetKeyDown("d")){
+            clockwise = true;
+        
+        }
 
 
       
-        
-       if(clockwise ==true){
-          if(Input.GetKey(KeyCode.D)){
+        if(clockwise ==true){
+            if(Input.GetKey(KeyCode.D)){
                 rotZ += -Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
-                
-
-
-             
-
             } 
         }
 
 
         if(clockwise ==false){
-            
-       
-  
-        
             if(Input.GetKey(KeyCode.A)){
                 rotZ += Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
-             
-
             }   
 
         }
