@@ -1,9 +1,43 @@
 ----------TO DO----------
 create steak
+Implement flipping for other levels, despite it not being what you would do.
 
 
 ----------IN PROGRESS----------
 pancake bubbles
+spatula
+pancake cooks
+
 
 ----------COMPLETED----------
 create github repo
+
+----------LEVEL 1 LAYOUT--------
+1) Vs. Screen
+2) preheat time (use A and D to preheat pan)
+3) press P to pour batter (triggers batter pour animation, enters cooking bottom side phase)
+4) While in cooking bottom side phase:
+	a) A + D to adjust heat
+	b) Mouse movement moves the spatula
+	c) M1 near the edge of the pancake checks underneath for doneness and increments the numchecks counter
+	d) F enters flip mode (a flipometer appears in the bottom-right corner)
+5)While in flip mode:
+	a) A thrust of the mouse determines the strength of the flip. This is visualized on the flip meter. 
+	  An animation of the pancake flipping with some fire in the background is played.
+	b) Pancake lands and we see the resulting quality: raw (splat),cooked without char, perfect, slightly over-done, over-cooked
+	c) If pancake is not perfect, output message with a hint about what to do next time. (Preheat to medium-high, lower heat just a tad after pouring.
+	   Nice heat management, but cook just a little longer. Nice heat management but don't cook quite so long. Your flip needs to be just a little stronger. 		    	   Your flip needs to be just a little gentler.)
+6) Repeat for other side of pancake, or shall we end it here?
+-Since it may be boring the second time around, we should conclude after the first flip.
+---------FLIPPING UNNECESSARILY-------
+Flipping happens naturally with the pancake.
+We will also flip the stir fry which is somewhat natural to do with a wok but a bit more challenging to do properly.
+We will then also flip the steak, which you normally would not do but rather turn it over.  But it's fun so we will flip it anyway.
+Lastly, when the soufflé comes out of the oven, there will be an option for the user to enter flip mode just before the level ends.  If they do so, they will indeed flip the  soufflé.  This is extremely hard to do without destroying the soufflé and serves no practical purpose other than bragging right.  If successful, they are given a confounded message of "That was really impressive but WHY?"
+--------SCORECARD--------
+PREHEAT:   F to A (and S for amazing)
+COOK:  F to A (and S for amazing)
+CONFIDENCE:  F to A (and S for amazing)
+FLIP:  F to A (and S for amazing)
+
+
