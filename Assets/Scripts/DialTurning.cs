@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DialTurning : MonoBehaviour
 {
-    public GameObject mouseCursor;
+    //public GameObject mouseCursor;
+    public StoveFlame flame;
     private float rotZ;
     public GameObject dial;
     public float speed;
@@ -43,6 +44,7 @@ public class DialTurning : MonoBehaviour
             if(Input.GetKey(KeyCode.D)){
                 rotZ += -Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
+                flame.SetFlameViaZVal(Zval);
             } 
         }
 
@@ -51,6 +53,7 @@ public class DialTurning : MonoBehaviour
             if(Input.GetKey(KeyCode.A)){
                 rotZ += Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
+                flame.SetFlameViaZVal(Zval);
             }   
 
         }
@@ -58,10 +61,10 @@ public class DialTurning : MonoBehaviour
 
 
     
-        cursorPosition = Input.mousePosition;
+        //cursorPosition = Input.mousePosition;
 
     }
-
+    /*
     void GetMouseControls()
     {
         if (Input.GetMouseButtonDown(0))
@@ -73,4 +76,5 @@ public class DialTurning : MonoBehaviour
             isHoldingM1 = false;
         }
     }
+    */
 }

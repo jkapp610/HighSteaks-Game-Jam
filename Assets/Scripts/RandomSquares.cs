@@ -26,6 +26,7 @@ public class RandomSquares : MonoBehaviour
             SpriteRenderer newSpriteRender = circles[i].AddComponent<SpriteRenderer>();
             newSpriteRender.sprite = circleSprite;
             newSpriteRender.sortingOrder = 20; //Instead of moving the z position, we can set the sprite to display over the pan and pancake.
+            newSpriteRender.color -= new Color(0f, 0f, 0f, .7f);
             circles[i].transform.position = new Vector3(randomX*0.1f, randomY*0.1f, 0);
             circles[i].transform.localScale += new Vector3(randomScale*0.01f, randomScale * 0.01f, 0);
             circles[i].name = "Circle_" + i;
