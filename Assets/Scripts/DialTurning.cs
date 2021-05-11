@@ -8,6 +8,7 @@ public class DialTurning : MonoBehaviour
     public StoveFlame flame;
     private float rotZ;
     public GameObject dial;
+    public RandomBubbles bubbles;
     public float speed;
     public float decayGoal;
     public float decaySpdDivisor;
@@ -55,6 +56,7 @@ public class DialTurning : MonoBehaviour
                 rotZ += -Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
                 flame.SetFlameViaZVal(Zval);
+                bubbles.SetTempViaZVal(Zval);
             } 
         }
 
@@ -64,6 +66,7 @@ public class DialTurning : MonoBehaviour
                 rotZ += Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
                 flame.SetFlameViaZVal(Zval);
+                bubbles.SetTempViaZVal(Zval);
             }   
 
         }
@@ -72,6 +75,7 @@ public class DialTurning : MonoBehaviour
             rotZ += Time.deltaTime * speed / decaySpdDivisor;
             dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
             flame.SetFlameViaZVal(Zval);
+            bubbles.SetTempViaZVal(Zval);
         }
 
     
