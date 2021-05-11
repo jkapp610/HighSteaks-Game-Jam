@@ -9,8 +9,11 @@ public class DialTurning : MonoBehaviour
     private float rotZ;
     public GameObject dial;
     public float speed;
-    public float decayDivisor;
+    public float decayGoal;
+    public float decaySpdDivisor;
+    private int randInt;
     private bool clockwise;
+    private bool decaying;
     Vector3 cursorPosition;
     Vector3 rotationvector;
     [SerializeField]
@@ -20,14 +23,20 @@ public class DialTurning : MonoBehaviour
     void Start()
     {
      //clockwise = true;
-        decayDivisor = 4;
+        decaySpdDivisor = 4;
+        decayGoal = 5f;        // X = 0.0X% chance of activating each frame
+        decaying = false;
     }
 
     // Update is called once per frame
     void Update(){
-
+        randInt = Random.Range(0, 10000);
 
         Zval = dial.transform.rotation.z;
+
+        if (randInt <= decayGoal) {
+            decaying = true;
+        }
 
         if(Zval <= -0.9996122||Input.GetKeyUp("d")||Input.GetKeyDown("a")){
             clockwise = false;
@@ -36,7 +45,7 @@ public class DialTurning : MonoBehaviour
     
         if(Zval>=0||Input.GetKeyUp("a")||Input.GetKeyDown("d")){
             clockwise = true;
-        
+            decaying = false;
         }
 
 
@@ -59,8 +68,8 @@ public class DialTurning : MonoBehaviour
 
         }
 
-        if(Zval < 0) {
-            rotZ += Time.deltaTime * speed / decayDivisor;
+        if(decaying && Zval < 0) {
+            rotZ += Time.deltaTime * speed / decaySpdDivisor;
             dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
             flame.SetFlameViaZVal(Zval);
         }
