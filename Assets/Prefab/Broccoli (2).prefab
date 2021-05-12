@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 48695192187409966}
   - component: {fileID: 48695192187409967}
   - component: {fileID: 6324841854055280778}
-  - component: {fileID: 6347374078355884020}
+  - component: {fileID: 998921970236830000}
   m_Layer: 3
   m_Name: Broccoli (2)
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48695192187409952}
   m_LocalRotation: {x: -0, y: -0, z: -0.8415389, w: 0.5401966}
-  m_LocalPosition: {x: 0.98, y: -1.01, z: 0}
+  m_LocalPosition: {x: 0.706, y: -1.443, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6347374078355884020
+--- !u!61 &998921970236830000
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.19627374, y: 0.05246657}
+  m_Offset: {x: 0.10376239, y: -0.035939157}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,5 +129,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8451468, y: 1.1711565}
+  m_Size: {x: 2.3524752, y: 1.7213386}
   m_EdgeRadius: 0
