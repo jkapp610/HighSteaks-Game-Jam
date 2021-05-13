@@ -14,6 +14,7 @@ public class RandomBubbles : MonoBehaviour
     public Sprite circleSprite;
     private int curr = 0;
 
+
     void Start()
     { 
 
@@ -46,10 +47,14 @@ public class RandomBubbles : MonoBehaviour
         timer += Time.deltaTime*timerscale;
         Debug.Log(timer + " :timer");
         //Debug.Log(interval + " :interval");
-        if (curr < numbubbles-5)
+        if (curr < numbubbles - 5)
+        {
             curr += 5;
+        }
         else
+        {
             curr = 0;
+        }
         if (timer >= interval)
         {
             for (int i = curr; i < curr+5; i++)
@@ -65,6 +70,7 @@ public class RandomBubbles : MonoBehaviour
             }
             timer = 0;
         }
+
     }
 
     public void SetTempViaZVal(float dialZVal)

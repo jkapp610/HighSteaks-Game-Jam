@@ -17,6 +17,12 @@ public class LevelTimer : MonoBehaviour
     private float secondTimer = 60f;
     private float flashingTimer = 0.5f;
     private bool textOn = true;
+
+    //Some silly sidepanel variables
+    private int panelstate = 0;
+    private int panelcount = 0;
+    public int paneltime = 360;
+    public GameObject sidepanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +64,36 @@ public class LevelTimer : MonoBehaviour
             }
             
         }
-        
+
+        //Some silly sidepanel code
+        if (minutes == 0 && seconds == 55 && panelstate == 0)
+        {
+            panelstate = 1;
+            sidepanel.SetActive(true);
+        }
+        else if (panelstate == 1 && panelcount < paneltime)
+        {
+            SpriteRenderer sprite = sidepanel.GetComponent<SpriteRenderer>();
+            sprite.color = new Color(1, 1, 1, (panelcount / 255.0f));
+
+            //sidepanel transparency up
+            panelcount++;
+        }
+        else if (panelstate == 1 && panelcount == paneltime)
+        {
+            panelstate = 2;
+        }
+        else if (panelstate == 2 && panelcount >= 0)
+        {
+            SpriteRenderer sprite = sidepanel.GetComponent<SpriteRenderer>();
+            sprite.color = new Color(1, 1, 1, (panelcount / 255.0f));
+            panelcount--;
+        }
+        else if (panelstate == 2)
+        {
+            panelstate = 3;
+        }
+
     }
 
     public void SetTimer(int m, int s)
