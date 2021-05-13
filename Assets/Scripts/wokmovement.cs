@@ -5,13 +5,15 @@ using UnityEngine;
 public class wokmovement : MonoBehaviour{
 
     Vector3 mousePosition;
-    public float movespeed  =0.1f;
+    public float movespeed  =0.5f;
     Rigidbody2D rigidbody;
     Vector2 position = new Vector2(0f,0f);
 
     // Start is called before the first frame update
     void Start(){
-          rigidbody = GetComponent<Rigidbody2D>();
+        //QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+        rigidbody = GetComponent<Rigidbody2D>();
         
     }
 

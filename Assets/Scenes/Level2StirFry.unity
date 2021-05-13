@@ -294,6 +294,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7705839941085219593, guid: 0bfdba75e6e4b44218c8c627bedc4714, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376040778954323986, guid: 0bfdba75e6e4b44218c8c627bedc4714, type: 3}
+      propertyPath: movespeed
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 8376040778954323989, guid: 0bfdba75e6e4b44218c8c627bedc4714, type: 3}
       propertyPath: m_Name
       value: Wok (1) Variant
@@ -953,7 +961,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0136442, y: 17.524895}
+  m_Size: {x: 2.0136442, y: 20.52489}
   m_EdgeRadius: 0
 --- !u!4 &619092172
 Transform:
@@ -1266,7 +1274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030494093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12, y: -6.06, z: 0}
+  m_LocalPosition: {x: -0.12, y: -10.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2278,7 +2286,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.897825, y: 0.59999895}
+  m_Size: {x: 20.89783, y: 0.59999895}
   m_EdgeRadius: 0
 --- !u!4 &1810141128
 Transform:
@@ -2288,7 +2296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810141126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.71, y: 7.12, z: 0}
+  m_LocalPosition: {x: 0, y: 7.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2513,6 +2521,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -114.606
       objectReference: {fileID: 0}
+    - target: {fileID: 6324841854055280778, guid: b322093fd8b2849df9845a402d98c05f, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324841854055280778, guid: b322093fd8b2849df9845a402d98c05f, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324841854055280778, guid: b322093fd8b2849df9845a402d98c05f, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b322093fd8b2849df9845a402d98c05f, type: 3}
 --- !u!1001 &5329446692699694108
@@ -2582,6 +2602,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carrot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6093917539326085115, guid: b1081edff2855448db82670893200105, type: 3}
+      propertyPath: m_Mass
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093917539326085115, guid: b1081edff2855448db82670893200105, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093917539326085115, guid: b1081edff2855448db82670893200105, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1081edff2855448db82670893200105, type: 3}
 --- !u!1001 &6634673274415687293
@@ -2591,6 +2623,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7722900847549934408, guid: 6b9b52bc4e31e4419b7463a819cb2684, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7722900847549934408, guid: 6b9b52bc4e31e4419b7463a819cb2684, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7722900847549934408, guid: 6b9b52bc4e31e4419b7463a819cb2684, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6634673273468893488, guid: 6b9b52bc4e31e4419b7463a819cb2684, type: 3}
       propertyPath: m_RootOrder
       value: 5
