@@ -13,8 +13,8 @@ TagManager:
   - UI
   - outercolider
   - wok
-  - 
-  - 
+  - blackscreen
+  - flycard
   - 
   - 
   - 
@@ -46,4 +46,10 @@ TagManager:
     locked: 0
   - name: bubbles
     uniqueID: 2426257697
+    locked: 0
+  - name: blackscreen
+    uniqueID: 1196715305
+    locked: 0
+  - name: flycard
+    uniqueID: 3663913357
     locked: 0
