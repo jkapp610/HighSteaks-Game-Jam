@@ -8,10 +8,15 @@ public class GrillforkMovement : MonoBehaviour
     public float movespeed  =0.1f;
     Rigidbody2D rigidbody;
     Vector2 position = new Vector2(0f,0f);
+    public float time = 10f;
+    public float currenttime = 0;
+   public bool canmove;
 
     // Start is called before the first frame update
     void Start(){
-          rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
+        currenttime =time;
+        canmove = true;
         
     }
 
@@ -20,9 +25,38 @@ public class GrillforkMovement : MonoBehaviour
          mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         position= Vector2.Lerp(transform.position,mousePosition,movespeed);
+        currenttime+= 1*Time.deltaTime;
+        if(currenttime>time){
+            canmove=true;
+         }
+
         
     }
     void FixedUpdate(){
-        rigidbody.MovePosition(position);
+        
+        if (canmove){
+            rigidbody.MovePosition(position);
+
+        }
+
+       
+
+         if (Input.GetMouseButtonDown(0)){
+
+          
+            
+             position = new Vector2(3.8166f,-4.585f);
+             rigidbody.MovePosition(position);
+             currenttime =0;
+             canmove =false;
+             
+                
+
+            
+            
+
+
+         }
+
     }
 }
