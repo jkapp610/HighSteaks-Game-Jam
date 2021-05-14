@@ -19,10 +19,12 @@ public class LevelTimer : MonoBehaviour
     private bool textOn = true;
 
     //Some silly sidepanel variables
+    /*
     private int panelstate = 0;
     private int panelcount = 0;
     public int paneltime = 360;
     public GameObject sidepanel;
+    */
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +66,7 @@ public class LevelTimer : MonoBehaviour
             }
             
         }
-
+        /*
         //Some silly sidepanel code
         if (minutes == 0 && seconds == 55 && panelstate == 0)
         {
@@ -93,6 +95,7 @@ public class LevelTimer : MonoBehaviour
         {
             panelstate = 3;
         }
+        */
 
     }
 
