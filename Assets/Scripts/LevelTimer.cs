@@ -102,7 +102,7 @@ public class LevelTimer : MonoBehaviour
             seconds = 59;
         else if (s < 0)
             seconds = 0;
-        //minutes = m;
+        minutes = m;
         //seconds = s;
         secondTimer = s;
         SetTimerText();
