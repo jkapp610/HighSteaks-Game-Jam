@@ -15,7 +15,7 @@ public class GrillforkMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         rigidbody = GetComponent<Rigidbody2D>();
-        currenttime =time;
+        currenttime =time; 
         canmove = true;
         
     }
@@ -45,8 +45,8 @@ public class GrillforkMovement : MonoBehaviour
 
           
             
-             position = new Vector2(3.8166f,-4.585f);
-             rigidbody.MovePosition(position);
+             //position = new Vector2(3.8166f,-4.585f);
+             //rigidbody.MovePosition(position);
              currenttime =0;
              canmove =false;
              
