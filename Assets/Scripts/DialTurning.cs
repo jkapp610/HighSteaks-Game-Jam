@@ -9,6 +9,7 @@ public class DialTurning : MonoBehaviour
     private float rotZ;
     public GameObject dial;
     public RandomBubbles bubbles;
+    public ScoringPancake score;
     public float speed;
     public float decayGoal;
     public float decaySpdDivisor;
@@ -57,6 +58,7 @@ public class DialTurning : MonoBehaviour
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
                 flame.SetFlameViaZVal(Zval);
                 bubbles.SetTempViaZVal(Zval);
+                score.SetHeatIncrementViaZVal(Zval);
             } 
         }
 
@@ -67,6 +69,7 @@ public class DialTurning : MonoBehaviour
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
                 flame.SetFlameViaZVal(Zval);
                 bubbles.SetTempViaZVal(Zval);
+                score.SetHeatIncrementViaZVal(Zval);
             }   
 
         }
@@ -76,6 +79,7 @@ public class DialTurning : MonoBehaviour
             dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
             flame.SetFlameViaZVal(Zval);
             bubbles.SetTempViaZVal(Zval);
+            score.SetHeatIncrementViaZVal(Zval);
         }
 
     

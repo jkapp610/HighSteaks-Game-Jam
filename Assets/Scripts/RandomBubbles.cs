@@ -45,7 +45,7 @@ public class RandomBubbles : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime*timerscale;
-        Debug.Log(timer + " :timer");
+        //Debug.Log(timer + " :timer");
         //Debug.Log(interval + " :interval");
         if (curr < numbubbles - 5)
         {

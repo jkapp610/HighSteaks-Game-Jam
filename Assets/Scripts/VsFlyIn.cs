@@ -11,6 +11,7 @@ public class VsFlyIn : MonoBehaviour
     private Rigidbody2D m_Rigidbody;
     public int waittime = 5000;
     private int currtime = 0;
+    private bool done = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,16 +26,17 @@ public class VsFlyIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currtime <= waittime)
+        if(!done && currtime <= waittime)
         {
             currtime++;
 
         }
-        else
+        else if(!done)
         {
             blackscreen.SetActive(false);
             flypicture.SetActive(false);
             pancakeUI.SetActive(true);
+            done = true;
         }
         
     }

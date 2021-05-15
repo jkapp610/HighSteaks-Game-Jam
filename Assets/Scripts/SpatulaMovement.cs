@@ -9,7 +9,7 @@ public class SpatulaMovement : MonoBehaviour{
      public float time = 10f;
     public float currenttime = 0;
    public bool canmove;
-
+    public ScoringPancake score;
 
     Vector2 position = new Vector2(0f,0f);
 
@@ -30,10 +30,11 @@ public class SpatulaMovement : MonoBehaviour{
          if(currenttime>time){
              canmove=true;
          }
-
-
-
         
+
+
+
+
     }
     void FixedUpdate(){
        
@@ -45,7 +46,7 @@ public class SpatulaMovement : MonoBehaviour{
 
        
 
-         if (Input.GetMouseButtonDown(0)){
+         if (Input.GetMouseButtonDown(0) && canmove){
 
           
             
@@ -53,12 +54,7 @@ public class SpatulaMovement : MonoBehaviour{
              rigidbody.MovePosition(position);
              currenttime =0;
              canmove =false;
-             
-                
-
-            
-            
-
+             score.IncrementControlCount();
 
          }
 
