@@ -5,6 +5,8 @@ using UnityEngine;
 public class PancakePouring : MonoBehaviour
 {
     public Sprite freshPancake;
+    public GameObject PancakePrefab;
+    public GameObject levelHUD;
     public Sprite columnSprite;
     //Currently these variables can be seen, but you can only set them when you call the function Pour().
     //startingPos will be the vector3 in the scene that the pancake will spread out from.
@@ -51,13 +53,17 @@ public class PancakePouring : MonoBehaviour
     public void Pour(Vector3 origin, float duration, float size)
     {
         timePassed = 0f;
-
-        newPancake = new GameObject("Pancake");
+        
+        //newPancake = new GameObject("Pancake");
+        newPancake = Instantiate(PancakePrefab, origin, Quaternion.identity);
+        newPancake.transform.SetParent(levelHUD.transform, true);
         newPancake.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         newPancake.transform.position = origin;
-        SpriteRenderer newPancakeSprite = newPancake.AddComponent<SpriteRenderer>();
-        newPancakeSprite.sprite = freshPancake;
-        newPancakeSprite.sortingOrder = 15;
+        //SpriteRenderer newPancakeSprite = newPancake.AddComponent<SpriteRenderer>();
+        //newPancakeSprite.sprite = freshPancake;
+        //newPancakeSprite.sortingOrder = 15;
+        
+
 
         pouringColumn = new GameObject("PancakeFall");
         pouringColumn.transform.localScale = new Vector3(0.1f, 5f, 1f);

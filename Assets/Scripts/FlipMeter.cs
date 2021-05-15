@@ -64,14 +64,15 @@ public class FlipMeter : MonoBehaviour{
             {
                 flipquality = changeTime - timer;
             }
-                            //Need to store a value based upon the position of the bar
-                            //when left mouse is clicked.  
-                            //base upon values of timer and direction
-            score.SetFlipQuality(flipquality) ;
+            //Need to store a value based upon the position of the bar
+            //when left mouse is clicked.  
+            //base upon values of timer and direction
+            //score.SetFlipQuality(flipquality) ;
+            StartCoroutine("FlipAnimation");
             countdown = false;
             canmove = false;
             hasflipped = true;
-
+            
         }
 
 
@@ -84,5 +85,11 @@ public class FlipMeter : MonoBehaviour{
             Bar.GetComponent<Rigidbody2D>().MovePosition(position);
           }
 
+    }
+
+    private IEnumerator FlipAnimation()
+    {
+        yield return new WaitForSeconds(5f);
+        score.SetFlipQuality(flipquality);
     }
 }
