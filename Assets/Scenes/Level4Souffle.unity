@@ -321,6 +321,7 @@ MonoBehaviour:
   speed: 3
   changeTime: 3
   timer: 0
+  mylevelTimer: {fileID: 1477742058}
 --- !u!4 &96388331
 Transform:
   m_ObjectHideFlags: 0
@@ -1644,8 +1645,6 @@ MonoBehaviour:
   timerText: {fileID: 546651863}
   minutes: 10
   seconds: 0
-  paneltime: 200
-  sidepanel: {fileID: 0}
 --- !u!114 &1477742059
 MonoBehaviour:
   m_ObjectHideFlags: 0

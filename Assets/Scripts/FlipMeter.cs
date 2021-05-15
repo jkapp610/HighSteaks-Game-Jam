@@ -12,12 +12,15 @@ public class FlipMeter : MonoBehaviour{
     bool countdown;
     bool canmove;
      int direction =1;
+     public LevelTimer mylevelTimer;
     // Start is called before the first frame update
     void Start(){
         flipMeter.SetActive(false);
          timer = changeTime;
          countdown = false;
          canmove =false;
+        
+       
     }
 
     // Update is called once per frame
@@ -39,6 +42,13 @@ public class FlipMeter : MonoBehaviour{
                 timer = changeTime;
             }
         }
+        if(mylevelTimer.minutes==0 && mylevelTimer.seconds==0){
+            flipMeter.SetActive(true);
+            countdown = true;
+            canmove= true;
+
+        }
+
 
         
     }
