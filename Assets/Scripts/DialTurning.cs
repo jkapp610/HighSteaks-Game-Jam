@@ -20,6 +20,7 @@ public class DialTurning : MonoBehaviour
     Vector3 rotationvector;
     [SerializeField]
     private float Zval;
+    public float ZvaleulerAngle;
     bool isHoldingM1;
     // Start is called before the first frame update
     void Start()
@@ -35,24 +36,27 @@ public class DialTurning : MonoBehaviour
         randInt = Random.Range(0, 10000);
 
         Zval = dial.transform.rotation.z;
+         ZvaleulerAngle = dial.transform.localRotation.eulerAngles.z;
+;
+
 
         if (randInt <= decayGoal) {
             decaying = true;
         }
 
-        if(Zval <= -0.9996122||Input.GetKeyUp("d")||Input.GetKeyDown("a")){
-            clockwise = false;
+        if(ZvaleulerAngle <= 181||Input.GetKeyUp("d")||Input.GetKeyDown("a")){
+            //clockwise = false;
          
         }
     
         if(Zval>=0||Input.GetKeyUp("a")||Input.GetKeyDown("d")){
-            clockwise = true;
+            //clockwise = true;
             decaying = false;
         }
 
 
       
-        if(clockwise ==true){
+       // if(clockwise ==true){
             if(Input.GetKey(KeyCode.D)){
                 rotZ += -Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
@@ -60,10 +64,10 @@ public class DialTurning : MonoBehaviour
                 bubbles.SetTempViaZVal(Zval);
                 score.SetHeatIncrementViaZVal(Zval);
             } 
-        }
+        //}
 
 
-        if(clockwise ==false){
+        //if(clockwise ==false){
             if(Input.GetKey(KeyCode.A)){
                 rotZ += Time.deltaTime*speed;
                 dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
@@ -72,7 +76,7 @@ public class DialTurning : MonoBehaviour
                 score.SetHeatIncrementViaZVal(Zval);
             }   
 
-        }
+       // }
 
         if(decaying && Zval < 0) {
             rotZ += Time.deltaTime * speed / decaySpdDivisor;

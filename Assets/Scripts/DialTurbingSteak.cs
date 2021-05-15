@@ -34,7 +34,7 @@ public class DialTurbingSteak : MonoBehaviour
     void Update(){
         randInt = Random.Range(0, 10000);
 
-        Zval = dial.transform.rotation.z;
+        Zval = dial.transform.rotation.eulerAngles.z;
 
         if (randInt <= decayGoal) {
             decaying = true;
