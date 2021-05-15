@@ -36,27 +36,23 @@ public class GrillforkMovement : MonoBehaviour
         
         if (canmove){
             rigidbody.MovePosition(position);
-
         }
 
-       
 
-         if (Input.GetMouseButtonDown(0)){
+    }
 
-          
-            
-             //position = new Vector2(3.8166f,-4.585f);
-             //rigidbody.MovePosition(position);
-             currenttime =0;
-             canmove =false;
-             
-                
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "steak")
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                //position = new Vector2(3.8166f,-4.585f);
+                //rigidbody.MovePosition(position);
+                currenttime = 0;
+                canmove = false;
 
-            
-            
-
-
-         }
-
+            }
+        }
     }
 }
