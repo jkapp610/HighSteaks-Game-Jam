@@ -74,7 +74,7 @@ public class DisplayScore : MonoBehaviour
             heatscore = 0; //NA
             heat_icon_NA.SetActive(true);
         }
-        if(heat <= heat_upperlimit_s && heat >= heat_lowerlimit_s)
+        else if(heat <= heat_upperlimit_s && heat >= heat_lowerlimit_s)
         {
             heatscore = 1;  //S
             heat_icon_S.SetActive(true);
