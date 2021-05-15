@@ -54,3 +54,6 @@ TagManager:
   - name: flycard
     uniqueID: 3663913357
     locked: 0
+  - name: ranks
+    uniqueID: 4230930679
+    locked: 0
