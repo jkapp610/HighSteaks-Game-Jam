@@ -15,6 +15,11 @@ public class PancakeObject : MonoBehaviour
 
     public GameObject peekSide;
     public GameObject otherSide;
+    public bool stillPouring = true;
+
+    private bool isFlipping = false;
+    private bool isFalling = false;
+    private bool cookedSide = false;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +32,30 @@ public class PancakeObject : MonoBehaviour
     void Update()
     {
         UpdateTemperature();
+        
+        if (isFlipping)
+        {
+            float flipAngle = 299f * Time.deltaTime;
+            gameObject.transform.Rotate(flipAngle, 0f, 0f);
+            transform.localScale = transform.localScale + (new Vector3(1f, 1f, 0f) * Time.deltaTime);
+            
+        }
+        else if (isFalling)
+        {
+            float flipAngle = 299f * Time.deltaTime;
+            gameObject.transform.Rotate(flipAngle, 0f, 0f);
+            transform.localScale = transform.localScale - (new Vector3(1f, 1f, 0f) * Time.deltaTime);
+        }
+        float pancakeAngle = Mathf.Abs(transform.rotation.eulerAngles.x);
+        
+        if(transform.localRotation.eulerAngles.x > 85 && transform.localRotation.eulerAngles.x < 95)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = currentPhase;
+        }
+        if (transform.localRotation.eulerAngles.x > 265 && transform.localRotation.eulerAngles.x < 275)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = PancakePhases[0];
+        }
     }
 
     private void UpdateTemperature()
@@ -68,6 +97,33 @@ public class PancakeObject : MonoBehaviour
 
     public void StartFlip()
     {
+        peekSide.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        otherSide.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "blackscreen";
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        isFlipping = true;
+}
 
+    public void EndFlip(bool on)
+    {
+        isFlipping = false;
+        isFalling = on;
+    }
+
+    public bool GetIsFlipping()
+    {
+        return isFlipping;
+    }
+
+    public void SetFlipEnding(double flipscore)
+    {
+        gameObject.transform.localRotation = Quaternion.identity;
+        if(flipscore > 1f)
+        {
+            peekSide.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            peekSide.transform.Rotate(70f, 0, 0);
+            otherSide.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+        }
     }
 }

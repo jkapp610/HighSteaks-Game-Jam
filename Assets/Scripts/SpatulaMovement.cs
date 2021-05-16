@@ -43,16 +43,23 @@ public class SpatulaMovement : MonoBehaviour{
             canmove=true;
         }
         //CheckForPancake();
-        
-        if(canmove)
+        if(!flipUI.activeInHierarchy)
         {
-            pancakeCheckUI.SetActive(false);
-            updateCheckUI();
+            if (canmove)
+            {
+                pancakeCheckUI.SetActive(false);
+                updateCheckUI();
+            }
+            else
+            {
+                pancakeCheckUI.SetActive(true);
+            }
         }
         else
         {
-            pancakeCheckUI.SetActive(true);
+            pancakeCheckUI.SetActive(false);
         }
+        
 
 
 
@@ -67,7 +74,7 @@ public class SpatulaMovement : MonoBehaviour{
                 GetComponent<SpriteRenderer>().sortingOrder = 20;
                 CheckForPancake();
             }
-            if (Input.GetMouseButtonDown(0) && canmove)
+            if (Input.GetMouseButtonDown(0) && canmove && !pancake.GetComponent<PancakeObject>().stillPouring)
             {
                 position = new Vector2(3.0f, -6.459f);
                 GetComponent<SpriteRenderer>().sortingOrder = 14;
@@ -81,7 +88,11 @@ public class SpatulaMovement : MonoBehaviour{
         else
         {
             Flip();
-            pancakeCheckUI.SetActive(false);
+            if(pancake.GetComponent<PancakeObject>().GetIsFlipping())
+            {
+                transform.localPosition = transform.localPosition - new Vector3(-0.03f, 0.05f, 0);
+            }
+
         }
 
         //x 4.1335 //y -6459
@@ -123,22 +134,29 @@ public class SpatulaMovement : MonoBehaviour{
     private void PeekEvent()
     {
         CheckForPancake();
-        if(beganPeeking == false)
-        {
-            beganPeeking = true;
-            pancake.GetComponent<PancakeObject>().CheckPancake();
-        }
-        else
-        {
-            beganPeeking = false;
-            pancake.GetComponent<PancakeObject>().EndCheck();
-        }
+            if (beganPeeking == false)
+            {
+                beganPeeking = true;
+                pancake.GetComponent<PancakeObject>().CheckPancake();
+            }
+            else
+            {
+                beganPeeking = false;
+                pancake.GetComponent<PancakeObject>().EndCheck();
+            }
+        
     }
 
     public void Flip()
     {
         if(!flipStarted)
         {
+            if(beganPeeking == true)
+            {
+                PeekEvent();
+            }
+            //pancakeCheckUI.SetActive(false);
+            //pancakeCheckUIImage.SetActive(false);
             flipStarted = true;
             position = new Vector2(2.0f, -4f);
             GetComponent<SpriteRenderer>().sortingOrder = 14;

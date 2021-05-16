@@ -15,7 +15,11 @@ public class FlipMeter : MonoBehaviour{
     private bool canmove;
     private bool hasflipped;
      int direction =1;
-     public LevelTimer mylevelTimer;
+     public GameObject mylevelTimer;
+    public GameObject blackscreen;
+    [SerializeField]
+    private float transparencyCounter = 1f;
+    private bool transparencyUp = true;
     // Start is called before the first frame update
     void Start(){
         flipMeter.SetActive(false);
@@ -46,7 +50,7 @@ public class FlipMeter : MonoBehaviour{
                 timer = changeTime;
             }
         }
-        if(!hasflipped && mylevelTimer.minutes==0 && mylevelTimer.seconds==0){
+        if(!hasflipped && mylevelTimer.GetComponent<LevelTimer>().minutes==0 && mylevelTimer.GetComponent<LevelTimer>().seconds==0){
             flipMeter.SetActive(true);
             countdown = true;
             canmove= true;
@@ -74,7 +78,18 @@ public class FlipMeter : MonoBehaviour{
             hasflipped = true;
             
         }
-
+        if(transparencyCounter < 1f && transparencyUp)
+        {
+            transparencyCounter += Time.deltaTime;
+            transparencyCounter = Mathf.Clamp(transparencyCounter, 0f, 1f);
+            blackscreen.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, transparencyCounter);
+        }
+        else if (transparencyCounter > 0f && !transparencyUp)
+        {
+            transparencyCounter -= Time.deltaTime;
+            transparencyCounter = Mathf.Clamp(transparencyCounter, 0f, 1f);
+            blackscreen.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, transparencyCounter);
+        }
 
         
     }
@@ -89,7 +104,19 @@ public class FlipMeter : MonoBehaviour{
 
     private IEnumerator FlipAnimation()
     {
-        yield return new WaitForSeconds(5f);
+        transparencyCounter = 0f;
+        transparencyUp = true;
+        blackscreen.SetActive(true);
+        GameObject pancake = GameObject.FindGameObjectWithTag("Pancake");
+        pancake.GetComponent<PancakeObject>().StartFlip();
+        mylevelTimer.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        transparencyUp = false;
+        pancake.GetComponent<PancakeObject>().EndFlip(true);
+        yield return new WaitForSeconds(1.5f);
+        pancake.GetComponent<PancakeObject>().EndFlip(false);
+        pancake.GetComponent<PancakeObject>().SetFlipEnding(flipquality);
+        yield return new WaitForSeconds(2f);
         score.SetFlipQuality(flipquality);
     }
 }

@@ -46,6 +46,7 @@ public class PancakePouring : MonoBehaviour
             {
                 //Destroy(pouringColumn);
                 isPouring = false;
+                newPancake.GetComponent<PancakeObject>().stillPouring = false;
             }
         }
     }
