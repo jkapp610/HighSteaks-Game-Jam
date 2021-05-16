@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5329446692862365430
+--- !u!1 &6634673273468893494
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5329446692862365424}
-  - component: {fileID: 5329446692862365431}
-  - component: {fileID: 6093917539326085115}
-  - component: {fileID: 3659716591758142555}
+  - component: {fileID: 6634673273468893488}
+  - component: {fileID: 6634673273468893489}
+  - component: {fileID: -7722900847549934408}
+  - component: {fileID: 3778694067973248861}
+  - component: {fileID: 316129858581622510}
   m_Layer: 3
-  m_Name: Carrot (3)
+  m_Name: Pepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5329446692862365424
+--- !u!4 &6634673273468893488
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5329446692862365430}
-  m_LocalRotation: {x: -0, y: -0, z: -0.8415389, w: 0.5401966}
-  m_LocalPosition: {x: -0.485, y: -0.785, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_GameObject: {fileID: 6634673273468893494}
+  m_LocalRotation: {x: -0, y: -0, z: 0.047054317, w: 0.99889237}
+  m_LocalPosition: {x: 1.57, y: -0.31, z: 0}
+  m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -114.606}
---- !u!212 &5329446692862365431
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5.394}
+--- !u!212 &6634673273468893489
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5329446692862365430}
+  m_GameObject: {fileID: 6634673273468893494}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 3bcb9ae5c3eefa343b23af2cf33170fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dacdf4ecdcd59d145bc330531859a085, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,14 +85,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6093917539326085115
+--- !u!50 &-7722900847549934408
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5329446692862365430}
+  m_GameObject: {fileID: 6634673273468893494}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -105,19 +106,46 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &3659716591758142555
-CircleCollider2D:
+--- !u!61 &3778694067973248861
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5329446692862365430}
+  m_GameObject: {fileID: 6634673273468893494}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.020123426, y: 0.009215756}
+  m_Offset: {x: 0.23947284, y: 0.009754419}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 1.1840898
+  m_Size: {x: 1.9608016, y: 1.6769428}
+  m_EdgeRadius: 0
+--- !u!114 &316129858581622510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634673273468893494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019ac259e6081804a9622f0701941849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CookingPhases:
+  - {fileID: 1008883792280507269, guid: 0714e883f71b5cb40bb93500656c617b, type: 3}
+  - {fileID: -785942689701872120, guid: 0714e883f71b5cb40bb93500656c617b, type: 3}
+  - {fileID: -2260069235592834271, guid: 0714e883f71b5cb40bb93500656c617b, type: 3}
+  currentPhase: {fileID: 1008883792280507269, guid: 0714e883f71b5cb40bb93500656c617b, type: 3}
