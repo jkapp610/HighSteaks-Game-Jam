@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 48695192187409967}
   - component: {fileID: 6324841854055280778}
   - component: {fileID: 1070087693188687378}
+  - component: {fileID: 3171545808192225532}
   m_Layer: 3
-  m_Name: Broccoli (2)
+  m_Name: Broccoli
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,3 +122,20 @@ CircleCollider2D:
   m_Offset: {x: 0.47483057, y: 0.21745433}
   serializedVersion: 2
   m_Radius: 0.75774527
+--- !u!114 &3171545808192225532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48695192187409952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019ac259e6081804a9622f0701941849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CookingPhases:
+  - {fileID: -7975574923624419789, guid: 61bb0615db9233548b2ca1a0fb87bc9f, type: 3}
+  - {fileID: 5329357836208906620, guid: 61bb0615db9233548b2ca1a0fb87bc9f, type: 3}
+  - {fileID: 5006197723342167768, guid: 61bb0615db9233548b2ca1a0fb87bc9f, type: 3}
+  currentPhase: {fileID: -7975574923624419789, guid: 61bb0615db9233548b2ca1a0fb87bc9f, type: 3}

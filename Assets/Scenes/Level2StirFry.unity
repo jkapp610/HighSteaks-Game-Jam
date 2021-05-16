@@ -862,7 +862,9 @@ MonoBehaviour:
   speed: 100
   decayGoal: 0
   decaySpdDivisor: 0
+  decaying: 0
   Zval: 0
+  ZvaleulerAngle: 0
 --- !u!212 &552362186
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1177,10 +1179,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipMeter: {fileID: 1146532695}
   Bar: {fileID: 1680297722}
+  score: {fileID: 0}
   speed: 3
   changeTime: 3
   timer: 0
-  mylevelTimer: {fileID: 889985166}
+  mylevelTimer: {fileID: 0}
+  blackscreen: {fileID: 0}
+  transparencyCounter: 1
 --- !u!4 &687724784
 Transform:
   m_ObjectHideFlags: 0
@@ -1411,7 +1416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 623477929}
-  minutes: 2
+  minutes: 3
   seconds: 0
 --- !u!114 &889985167
 MonoBehaviour:
