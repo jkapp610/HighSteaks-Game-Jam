@@ -17,6 +17,9 @@ public class LevelTimer : MonoBehaviour
     private float secondTimer = 60f;
     private float flashingTimer = 0.5f;
     private bool textOn = true;
+    
+     //private bool powerhaswentout;
+
 
     //Some silly sidepanel variables
     /*
@@ -29,12 +32,14 @@ public class LevelTimer : MonoBehaviour
     void Start()
     {
         SetTimer(minutes, seconds);
+       // powerhaswentout = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if(minutes >= 0)
         {
             SetTimerText();
@@ -111,13 +116,13 @@ public class LevelTimer : MonoBehaviour
         SetTimerText();
     }
 
-    private void SetTimerText()
-    {
-        string secondsText = "" + seconds;
-        if(seconds < 10)
-        {
-            secondsText = "0" + seconds;
+    private void SetTimerText() {
+
+            string secondsText = "" + seconds;
+            if(seconds < 10){
+                secondsText = "0" + seconds;
+            }
+            timerText.text = minutes + ":" + secondsText;
         }
-        timerText.text = minutes + ":" + secondsText;
-    }
+    
 }
