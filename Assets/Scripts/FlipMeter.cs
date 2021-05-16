@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+ using UnityEngine.SceneManagement;
 
 public class FlipMeter : MonoBehaviour{
 
@@ -20,6 +21,7 @@ public class FlipMeter : MonoBehaviour{
     [SerializeField]
     private float transparencyCounter = 1f;
     private bool transparencyUp = true;
+    private string sceneName;
     // Start is called before the first frame update
     void Start(){
         flipMeter.SetActive(false);
@@ -27,6 +29,8 @@ public class FlipMeter : MonoBehaviour{
          countdown = false;
          canmove =false;
          hasflipped = false;
+         Scene currentscene = SceneManager.GetActiveScene();
+         string sceneName = currentscene.name;
         
        
     }
@@ -104,19 +108,31 @@ public class FlipMeter : MonoBehaviour{
 
     private IEnumerator FlipAnimation()
     {
-        transparencyCounter = 0f;
-        transparencyUp = true;
-        blackscreen.SetActive(true);
-        GameObject pancake = GameObject.FindGameObjectWithTag("Pancake");
-        pancake.GetComponent<PancakeObject>().StartFlip();
-        mylevelTimer.SetActive(false);
-        yield return new WaitForSeconds(1.5f);
-        transparencyUp = false;
-        pancake.GetComponent<PancakeObject>().EndFlip(true);
-        yield return new WaitForSeconds(1.5f);
-        pancake.GetComponent<PancakeObject>().EndFlip(false);
-        pancake.GetComponent<PancakeObject>().SetFlipEnding(flipquality);
-        yield return new WaitForSeconds(2f);
-        score.SetFlipQuality(flipquality);
+        if(sceneName=="Level1Pancakes"){
+            transparencyCounter = 0f;
+            transparencyUp = true;
+            blackscreen.SetActive(true);
+            GameObject pancake = GameObject.FindGameObjectWithTag("Pancake");
+            pancake.GetComponent<PancakeObject>().StartFlip();
+            mylevelTimer.SetActive(false);
+            yield return new WaitForSeconds(1.5f);
+            transparencyUp = false;
+            pancake.GetComponent<PancakeObject>().EndFlip(true);
+            yield return new WaitForSeconds(1.5f);
+            pancake.GetComponent<PancakeObject>().EndFlip(false);
+            pancake.GetComponent<PancakeObject>().SetFlipEnding(flipquality);
+            yield return new WaitForSeconds(2f);
+            score.SetFlipQuality(flipquality);
+        }
+        if(sceneName=="Level2StirFry"){
+
+
+        }
+         if(sceneName=="Level3Steak"){
+
+
+        }
+
+
     }
 }
