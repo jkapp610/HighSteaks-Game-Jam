@@ -8,7 +8,7 @@ public class DialTurningStirFry : MonoBehaviour
     private float rotZ = 359f;
     public GameObject dial;
     //public RandomBubbles bubbles;
-   // public ScoringPancake score;
+    public ScoreController score;
     public float speed;
     public float decayGoal;
     public float decaySpdDivisor;
@@ -60,7 +60,7 @@ public class DialTurningStirFry : MonoBehaviour
         dial.transform.rotation = Quaternion.Euler(0, 0, rotZ);
         flame.SetFlameViaZVal(Zval);
         //bubbles.SetTempViaZVal(Zval);
-       // score.SetHeatIncrementViaZVal(Zval);
+        score.SetHeatIncrementViaZVal(Zval);
 
     }
 }

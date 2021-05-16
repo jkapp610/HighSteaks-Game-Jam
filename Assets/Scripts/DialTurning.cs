@@ -9,7 +9,7 @@ public class DialTurning : MonoBehaviour
     private float rotZ = 359f;
     public GameObject dial;
     public RandomBubbles bubbles;
-    public ScoringPancake score;
+    public ScoreController score;
     public float speed;
     public float decayGoal;
     public float decaySpdDivisor;

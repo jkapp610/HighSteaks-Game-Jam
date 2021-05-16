@@ -8,7 +8,7 @@ public class Level4FlipMeter : MonoBehaviour
 
        public GameObject  flipMeter;
      public GameObject Bar;
-    public ScoringPancake score;
+    public ScoreController score;
      public OvenPower power;
     public float speed= 3.0f;
     public float changeTime = 3.0f;

@@ -9,7 +9,7 @@ public class VsFlyIn : MonoBehaviour
     public GameObject blackscreen;
     public GameObject flypicture;
     private Rigidbody2D m_Rigidbody;
-    private int waittime = 5000;
+    private int waittime = 240;
     private int currtime = 0;
     private bool done = false;
 
@@ -18,7 +18,11 @@ public class VsFlyIn : MonoBehaviour
     {
         //blackscreen.SetActive(true);
         //flypicture.SetActive(true);
-        
+        waittime = 240;
+        currtime = 0;
+        done = false;
+
+
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class VsFlyIn : MonoBehaviour
         if(!done && currtime <= waittime)
         {
             currtime++;
+            Debug.Log(currtime);
 
         }
         else if(!done)

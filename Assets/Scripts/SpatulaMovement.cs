@@ -9,7 +9,7 @@ public class SpatulaMovement : MonoBehaviour{
     public float time = 3f;
     public float currenttime = 0;
     public bool canmove;
-    public ScoringPancake score;
+    public ScoreController score;
     public GameObject pancake;
     private bool pancakeSet = false;
     Vector2 position = new Vector2(0f,0f);

@@ -11,6 +11,7 @@ public class GrillforkMovement : MonoBehaviour
     public float time = 10f;
     public float currenttime = 0;
    public bool canmove;
+    public ScoreController score;
 
     // Start is called before the first frame update
     void Start(){
@@ -51,6 +52,7 @@ public class GrillforkMovement : MonoBehaviour
                 //rigidbody.MovePosition(position);
                 currenttime = 0;
                 canmove = false;
+                score.IncrementControlCount();
 
             }
         }

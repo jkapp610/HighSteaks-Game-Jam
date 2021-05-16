@@ -5,7 +5,7 @@ using UnityEngine;
 public class PancakeObject : MonoBehaviour
 {
     [SerializeField]
-    private ScoringPancake scoreboard;
+    private ScoreController scoreboard;
     [SerializeField]
     private double currentTemp;
     private int cookingSidePhase = 0;
@@ -24,7 +24,7 @@ public class PancakeObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreboard = GetComponentInParent<ScoringPancake>();
+        scoreboard = GetComponentInParent<ScoreController>();
         currentPhase = PancakePhases[0];
     }
 

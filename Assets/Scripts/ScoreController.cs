@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoringPancake : MonoBehaviour
+public class ScoreController : MonoBehaviour
 {
     private double heatincrement = 0;
     private double totalheat = 0;
