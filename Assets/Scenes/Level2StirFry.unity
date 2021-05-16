@@ -476,6 +476,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8376040778954323986, guid: 0bfdba75e6e4b44218c8c627bedc4714, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 409934316}
+    - target: {fileID: 8376040778954323986, guid: 0bfdba75e6e4b44218c8c627bedc4714, type: 3}
       propertyPath: movespeed
       value: 0.12
       objectReference: {fileID: 0}
@@ -1265,7 +1269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flame: {fileID: 1211801197}
   dial: {fileID: 552362184}
-  score: {fileID: 0}
+  score: {fileID: 409934316}
   speed: 100
   decayGoal: 0
   decaySpdDivisor: 0
@@ -1586,7 +1590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipMeter: {fileID: 1146532695}
   Bar: {fileID: 1680297722}
-  score: {fileID: 0}
+  score: {fileID: 409934316}
   speed: 3
   changeTime: 3
   timer: 0

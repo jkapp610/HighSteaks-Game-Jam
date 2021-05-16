@@ -2172,7 +2172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flipMeter: {fileID: 268140646}
   Bar: {fileID: 2043988642}
-  score: {fileID: 0}
+  score: {fileID: 39490164}
   speed: 3
   changeTime: 3
   timer: 0
@@ -3004,6 +3004,7 @@ MonoBehaviour:
   time: 10
   currenttime: 0
   canmove: 0
+  score: {fileID: 39490164}
 --- !u!50 &1677625931
 Rigidbody2D:
   serializedVersion: 4
@@ -3442,7 +3443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dial: {fileID: 1797174735}
-  score: {fileID: 0}
+  score: {fileID: 39490164}
   speed: 0
   decayGoal: 0
   decaySpdDivisor: 0

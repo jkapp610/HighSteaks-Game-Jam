@@ -18,6 +18,7 @@ public class VsFlyIn : MonoBehaviour
     {
         //blackscreen.SetActive(true);
         //flypicture.SetActive(true);
+        Application.targetFrameRate = 60;
         waittime = 240;
         currtime = 0;
         done = false;

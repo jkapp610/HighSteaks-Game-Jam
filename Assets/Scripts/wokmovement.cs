@@ -27,10 +27,11 @@ public class wokmovement : MonoBehaviour{
          mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         position= Vector2.Lerp(transform.position,mousePosition,movespeed);
-        if (position != previousposition)
+        if (position.x != previousposition.x && position.y != previousposition.y)
         {
             oncooldown = true;
             score.IncrementControlCount();
+            Debug.Log("cooldown activated");
         }
         previousposition = position;
         if (oncooldown)
