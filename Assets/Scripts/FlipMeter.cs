@@ -30,7 +30,7 @@ public class FlipMeter : MonoBehaviour{
          canmove =false;
          hasflipped = false;
          Scene currentscene = SceneManager.GetActiveScene();
-         string sceneName = currentscene.name;
+         sceneName = currentscene.name;
         
        
     }
@@ -80,7 +80,8 @@ public class FlipMeter : MonoBehaviour{
             countdown = false;
             canmove = false;
             hasflipped = true;
-            
+
+
         }
         if(transparencyCounter < 1f && transparencyUp)
         {
@@ -123,6 +124,7 @@ public class FlipMeter : MonoBehaviour{
             pancake.GetComponent<PancakeObject>().SetFlipEnding(flipquality);
             yield return new WaitForSeconds(2f);
             score.SetFlipQuality(flipquality);
+
         }
         if(sceneName=="Level2StirFry"){
 
