@@ -2599,7 +2599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bcdadc87a1b7a4e8b73d22aa3ea16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pancakeUI: {fileID: 1053514849}
+  myUI: {fileID: 1053514849}
   m_Thrust: 20
   blackscreen: {fileID: 1833907918}
   flypicture: {fileID: 816034375}
