@@ -6,7 +6,6 @@ public class DialTurning : MonoBehaviour
 {
     //public GameObject mouseCursor;
     public StoveFlame flame;
-    [SerializeField]
     private float rotZ = 359f;
     public GameObject dial;
     public RandomBubbles bubbles;
@@ -16,6 +15,7 @@ public class DialTurning : MonoBehaviour
     public float decaySpdDivisor;
     private int randInt;
     private bool clockwise;
+    [SerializeField]
     private bool decaying;
     Vector3 cursorPosition;
     Vector3 rotationvector;
@@ -36,81 +36,33 @@ public class DialTurning : MonoBehaviour
     void Update(){
         randInt = Random.Range(0, 10000);
 
-        Zval = dial.transform.rotation.z;
-        ZvaleulerAngle = dial.transform.localRotation.eulerAngles.z;
-;
-
-
-        if (randInt <= decayGoal) {
+        if (randInt <= decayGoal)
+        {
             decaying = true;
         }
-        /*
-        if(ZvaleulerAngle <= 181||Input.GetKeyUp("d")||Input.GetKeyDown("a")){
-            //clockwise = false;
-         
-        }
-        */
-        if(Zval>=0||Input.GetKeyUp("a")||Input.GetKeyDown("d")){
-            //clockwise = true;
+
+        if(Zval <= 0 || Input.GetAxis("Horizontal") != 0)
+        {
             decaying = false;
         }
 
+        Zval = dial.transform.rotation.z;
+        ZvaleulerAngle = dial.transform.localRotation.eulerAngles.z;
+        rotZ += Input.GetAxis("Horizontal") * -2;
 
-        rotZ += Input.GetAxis("Horizontal") * -1;
+        if (decaying && Zval > 0)
+        {
+            Debug.Log("Decay!");
+            rotZ += Time.deltaTime * speed / decaySpdDivisor;
+        }
+
         rotZ = Mathf.Clamp(rotZ, 180, 360);
-       // if(clockwise ==true){
-            if(Input.GetKeyDown(KeyCode.D)){
-                //rotZ -= 1f;
-            /*
-                dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
-                flame.SetFlameViaZVal(Zval);
-                bubbles.SetTempViaZVal(Zval);
-                score.SetHeatIncrementViaZVal(Zval);*/
-            } 
-        //}
-
-
-        //if(clockwise ==false){
-            if(Input.GetKeyDown(KeyCode.A)){
-                //rotZ += 1f;
-            /*
-                dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
-                flame.SetFlameViaZVal(Zval);
-                bubbles.SetTempViaZVal(Zval);
-                score.SetHeatIncrementViaZVal(Zval);*/
-            }
-
-        // }
 
         dial.transform.rotation = Quaternion.Euler(0, 0, rotZ);
-        
-
-
-        /*
-        if (decaying && Zval < 0) {
-            rotZ += Time.deltaTime * speed / decaySpdDivisor;
-            
-            dial.transform.rotation = Quaternion.Euler(0,0,rotZ);
-            flame.SetFlameViaZVal(Zval);
-            bubbles.SetTempViaZVal(Zval);
-            score.SetHeatIncrementViaZVal(Zval);
-         }
-    */
-
-        //cursorPosition = Input.mousePosition;
+        flame.SetFlameViaZVal(Zval);
+        bubbles.SetTempViaZVal(Zval);
+        score.SetHeatIncrementViaZVal(Zval);
 
     }
-    /*
-    void GetMouseControls()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            isHoldingM1 = true;
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            isHoldingM1 = false;
-        }
-    }
-    */
+
 }

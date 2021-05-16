@@ -21,7 +21,7 @@ public class ScoringPancake : MonoBehaviour
     void Update()
     {
         totalheat += heatincrement;
-        Debug.Log(myFlipLocation + " : flip location");
+        //Debug.Log(myFlipLocation + " : flip location");
         if (displayscore)
         {
             displayscore = false;
