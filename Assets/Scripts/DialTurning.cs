@@ -47,7 +47,7 @@ public class DialTurning : MonoBehaviour
         }
 
         Zval = dial.transform.rotation.z;
-        ZvaleulerAngle = dial.transform.localRotation.eulerAngles.z;
+        //ZvaleulerAngle = dial.transform.localRotation.eulerAngles.z;
         rotZ += Input.GetAxis("Horizontal") * -2;
 
         if (decaying && Zval > 0)
