@@ -6,7 +6,7 @@ public class wokmovement : MonoBehaviour{
 
     Vector3 mousePosition;
     public float movespeed  =0.5f;
-    Rigidbody2D rigidbody;
+    Rigidbody2D rigidbody2d;
     Vector2 position = new Vector2(0f,0f);
     private int cooldown = 0;
     private int maxcooldown = 600;
@@ -18,22 +18,23 @@ public class wokmovement : MonoBehaviour{
     void Start(){
         //QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
         previousposition = position;
     }
 
     // Update is called once per frame
     void Update(){
-         mousePosition = Input.mousePosition;
+        mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        position= Vector2.Lerp(transform.position,mousePosition,movespeed);
-        if (position.x != previousposition.x && position.y != previousposition.y)
+        position = Vector2.Lerp(transform.position,mousePosition,movespeed);
+        Vector2 positionDelta = position - previousposition;
+        if(!oncooldown && (positionDelta.x > 0.3f || positionDelta.y > 0.3f))
         {
             oncooldown = true;
             score.IncrementControlCount();
             Debug.Log("cooldown activated");
         }
-        previousposition = position;
+        previousposition = transform.position;
         if (oncooldown)
         {
             if (cooldown < maxcooldown)
@@ -49,6 +50,6 @@ public class wokmovement : MonoBehaviour{
         
     }
     void FixedUpdate(){
-        rigidbody.MovePosition(position);
+        rigidbody2d.MovePosition(position);
     }
 }
