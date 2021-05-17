@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 316129858581622510}
   m_Layer: 3
   m_Name: Pepper
-  m_TagString: Untagged
+  m_TagString: Stirfry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

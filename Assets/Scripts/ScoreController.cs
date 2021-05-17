@@ -21,7 +21,7 @@ public class ScoreController : MonoBehaviour
     void Update()
     {
         totalheat += heatincrement;
-        Debug.Log(totalheat + " : total heat");
+        //Debug.Log(totalheat + " : total heat");
         //Debug.Log(numcontrols + " : control count");
         //Debug.Log(myFlipLocation + " : flip location");
         if (displayscore)

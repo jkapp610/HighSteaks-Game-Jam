@@ -10,6 +10,7 @@ public class FlipMeter : MonoBehaviour{
     public ScoreController score;
      public float speed= 3.0f;
     public float changeTime = 3.0f;
+    [SerializeField]
     private float flipquality = 0;
     public float timer;
     private bool countdown;
@@ -127,7 +128,25 @@ public class FlipMeter : MonoBehaviour{
 
         }
         if(sceneName=="Level2StirFry"){
-
+            GameObject[] stirfry = GameObject.FindGameObjectsWithTag("Stirfry");
+            for (int i = 0; i < stirfry.Length; i++)
+            {
+                stirfry[i].GetComponent<VegetableObject>().StartFlip();
+                stirfry[i].GetComponent<VegetableObject>().SetFlipEnding(flipquality);
+            }
+            mylevelTimer.SetActive(false);
+            yield return new WaitForSeconds(1.5f);
+            transparencyUp = false;
+            for (int i = 0; i < stirfry.Length; i++)
+            {
+                stirfry[i].GetComponent<VegetableObject>().EndFlip(true);
+            }
+            yield return new WaitForSeconds(1.5f);
+            for (int i = 0; i < stirfry.Length; i++)
+            {
+                stirfry[i].GetComponent<VegetableObject>().EndFlip(false);
+            }
+            yield return new WaitForSeconds(2f);
             score.SetFlipQuality(flipquality);
         }
          if(sceneName=="Level3Steak"){
