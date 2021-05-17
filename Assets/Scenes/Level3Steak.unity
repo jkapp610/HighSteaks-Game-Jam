@@ -811,6 +811,88 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29509425, y: 0.43180612}
   m_EdgeRadius: 0
+--- !u!1 &368823668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 368823669}
+  - component: {fileID: 368823670}
+  m_Layer: 0
+  m_Name: controls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &368823669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368823668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1355629, y: 7.959672, z: 4.0742903}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1401968355}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &368823670
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368823668}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -631053939
+  m_SortingLayer: 4
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3a801ee0b4b5c184eb4a986f0a1b677e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.56, y: 5.12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &449431932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,6 +2392,7 @@ Transform:
   - {fileID: 268140649}
   - {fileID: 1311710014}
   - {fileID: 1654496771}
+  - {fileID: 368823669}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3289,8 +3372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1544329518}
-  minutes: 2
-  seconds: 0
+  minutes: 0
+  seconds: 1
 --- !u!114 &1795104177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4604,44 +4687,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a3020b17be0c54296e1d993cf1bd91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heat_upperlimit_s: 6200
-  heat_lowerlimit_s: 6000
-  heat_upperlimit_a: 6400
-  heat_lowerlimit_a: 5800
-  heat_upperlimit_b: 6600
-  heat_lowerlimit_b: 5600
-  heat_upperlimit_c: 6800
-  heat_lowerlimit_c: 5400
+  heat_upperlimit_s: 6250
+  heat_lowerlimit_s: 6200
+  heat_upperlimit_a: 6550
+  heat_lowerlimit_a: 6150
+  heat_upperlimit_b: 6700
+  heat_lowerlimit_b: 6000
+  heat_upperlimit_c: 6900
+  heat_lowerlimit_c: 5800
   flipmin_s: 0.1
   flipmin_a: 0.37
   flipmin_b: 0.6
   flipmin_c: 0.9
   contollimit_s: 0
-  contollimit_a: 2
-  contollimit_b: 4
-  contollimit_c: 6
+  contollimit_a: 1
+  contollimit_b: 2
+  contollimit_c: 3
   controlminimize: 1
-  PancakeUI: {fileID: 0}
-  blackscreen: {fileID: 0}
-  scoreboard: {fileID: 0}
-  heat_icon_S: {fileID: 0}
-  heat_icon_A: {fileID: 0}
-  heat_icon_B: {fileID: 0}
-  heat_icon_C: {fileID: 0}
-  heat_icon_F: {fileID: 0}
-  heat_icon_NA: {fileID: 0}
-  flip_icon_S: {fileID: 0}
-  flip_icon_A: {fileID: 0}
-  flip_icon_B: {fileID: 0}
-  flip_icon_C: {fileID: 0}
-  flip_icon_F: {fileID: 0}
-  flip_icon_NA: {fileID: 0}
-  control_icon_S: {fileID: 0}
-  control_icon_A: {fileID: 0}
-  control_icon_B: {fileID: 0}
-  control_icon_C: {fileID: 0}
-  control_icon_F: {fileID: 0}
-  control_icon_NA: {fileID: 0}
+  myUI: {fileID: 1401968354}
+  blackscreen: {fileID: 1287042817}
+  scoreboard: {fileID: 456582209}
+  heat_icon_S: {fileID: 2134012166}
+  heat_icon_A: {fileID: 1794310244}
+  heat_icon_B: {fileID: 215171177}
+  heat_icon_C: {fileID: 2121536451}
+  heat_icon_F: {fileID: 1023626525}
+  heat_icon_NA: {fileID: 1857526204}
+  flip_icon_S: {fileID: 1248798906}
+  flip_icon_A: {fileID: 1965288442}
+  flip_icon_B: {fileID: 1070016837}
+  flip_icon_C: {fileID: 790310715}
+  flip_icon_F: {fileID: 1221630895}
+  flip_icon_NA: {fileID: 2047214645}
+  control_icon_S: {fileID: 312453782}
+  control_icon_A: {fileID: 798680095}
+  control_icon_B: {fileID: 1839664667}
+  control_icon_C: {fileID: 1822040454}
+  control_icon_F: {fileID: 1852018609}
+  control_icon_NA: {fileID: 77384455}
 --- !u!4 &2132930619
 Transform:
   m_ObjectHideFlags: 0

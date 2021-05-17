@@ -22,6 +22,7 @@ public class DialTurningStirFry : MonoBehaviour
     private float Zval;
     public float ZvaleulerAngle;
     bool isHoldingM1;
+    bool oncooldown = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,8 +61,22 @@ public class DialTurningStirFry : MonoBehaviour
         dial.transform.rotation = Quaternion.Euler(0, 0, rotZ);
         flame.SetFlameViaZVal(Zval);
         //bubbles.SetTempViaZVal(Zval);
-        score.SetHeatIncrementViaZVal(Zval);
+        if (oncooldown)
+        {
+            score.SetHeatIncrementViaZVal(Zval);
+        }
+        else
+        {
+            score.SetHeatIncrementViaZVal(Zval*2.0f);
+        }
+        
 
     }
+
+    public void setCooldown(bool mysetting)
+    {
+        oncooldown = mysetting;
+    }
+    
 }
 

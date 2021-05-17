@@ -13,6 +13,7 @@ public class wokmovement : MonoBehaviour{
     private bool oncooldown = false;
     private Vector2 previousposition;
     public ScoreController score;
+    public DialTurningStirFry heatmanagement;
 
     // Start is called before the first frame update
     void Start(){
@@ -33,6 +34,7 @@ public class wokmovement : MonoBehaviour{
             oncooldown = true;
             score.IncrementControlCount();
             Debug.Log("cooldown activated");
+            heatmanagement.setCooldown(true);
         }
         previousposition = transform.position;
         if (oncooldown)
@@ -45,6 +47,7 @@ public class wokmovement : MonoBehaviour{
             {
                 cooldown = 0;
                 oncooldown = false;
+                heatmanagement.setCooldown(false);
             }
         }
         

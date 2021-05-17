@@ -26,7 +26,7 @@ public class DisplayScore : MonoBehaviour
     private int flipscore = 0;  //1: S, 2: A, 3: B, 4: C, 5: F
     private int controlscore = 0;  //1: S, 2: A, 3: B, 4: C, 5: F
 
-    public GameObject PancakeUI;
+    public GameObject myUI;
     public GameObject blackscreen;
     public GameObject scoreboard;
 
@@ -66,7 +66,7 @@ public class DisplayScore : MonoBehaviour
 
     public void runDisplay(double heat, double flip, int control)
     {
-        PancakeUI.SetActive(false); //Not working
+        myUI.SetActive(false); //Not working
         blackscreen.SetActive(true);
         scoreboard.SetActive(true);
         if(heat < 0)

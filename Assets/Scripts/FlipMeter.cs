@@ -128,11 +128,11 @@ public class FlipMeter : MonoBehaviour{
         }
         if(sceneName=="Level2StirFry"){
 
-
+            score.SetFlipQuality(flipquality);
         }
          if(sceneName=="Level3Steak"){
 
-
+            score.SetFlipQuality(flipquality);
         }
 
 
