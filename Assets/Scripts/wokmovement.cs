@@ -14,6 +14,8 @@ public class wokmovement : MonoBehaviour{
     private Vector2 previousposition;
     public ScoreController score;
     public DialTurningStirFry heatmanagement;
+    public GameObject flipUI;
+    public GameObject vsUI;
 
     // Start is called before the first frame update
     void Start(){
@@ -25,32 +27,34 @@ public class wokmovement : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        position = Vector2.Lerp(transform.position,mousePosition,movespeed);
-        Vector2 positionDelta = position - previousposition;
-        if(!oncooldown && (positionDelta.x > 0.3f || positionDelta.y > 0.3f))
+        if (!flipUI.activeInHierarchy && !vsUI.activeInHierarchy)
         {
-            oncooldown = true;
-            score.IncrementControlCount();
-            Debug.Log("cooldown activated");
-            heatmanagement.setCooldown(true);
-        }
-        previousposition = transform.position;
-        if (oncooldown)
-        {
-            if (cooldown < maxcooldown)
+            mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            position = Vector2.Lerp(transform.position, mousePosition, movespeed);
+            Vector2 positionDelta = position - previousposition;
+            if (!oncooldown && (positionDelta.x > 0.3f || positionDelta.y > 0.3f))
             {
-                cooldown++;
+                oncooldown = true;
+                score.IncrementControlCount();
+                Debug.Log("cooldown activated");
+                heatmanagement.setCooldown(true);
             }
-            else
+            previousposition = transform.position;
+            if (oncooldown)
             {
-                cooldown = 0;
-                oncooldown = false;
-                heatmanagement.setCooldown(false);
+                if (cooldown < maxcooldown)
+                {
+                    cooldown++;
+                }
+                else
+                {
+                    cooldown = 0;
+                    oncooldown = false;
+                    heatmanagement.setCooldown(false);
+                }
             }
         }
-        
     }
     void FixedUpdate(){
         rigidbody2d.MovePosition(position);

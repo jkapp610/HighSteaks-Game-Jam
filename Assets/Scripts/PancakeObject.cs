@@ -102,7 +102,7 @@ public class PancakeObject : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "blackscreen";
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         isFlipping = true;
-}
+    }
 
     public void EndFlip(bool on)
     {
